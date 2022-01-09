@@ -1,8 +1,6 @@
 package com.java.gb.vtb.hw5;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class HomeWork5 {
     public static void main(String[] args) {
@@ -10,13 +8,20 @@ public class HomeWork5 {
         String[] stringArray = {"Anna", "Anna", "Isabella", "Cinderella", "Rapunzel", "Alexandra",
                 "Dana", "Amira", "Natasha", "Marina", "Irina", "Inna", "Samira", "Violetta", "Mika",
                 "Dina", "Anika", "Rosie", "Bella", "Natalie"};
-        Set<String> distinctArray = new HashSet<>();
-        distinctArray.addAll(Arrays.asList(stringArray));
-        distinctArray.addAll(Arrays.asList(stringArray));
-        distinctArray.addAll(Arrays.asList(stringArray));
+
+        Map<String, Integer> distinctMap = new HashMap<>();
+        for(String s : stringArray){
+            distinctMap.put(s, distinctMap.getOrDefault(s, 0) + 1);
+//            if(distinctMap.isEmpty() || !distinctMap.containsKey(s)) {
+//                distinctMap.put(s, 1);
+//            } else {
+//                Integer count = distinctMap.get(s) + 1;
+//                distinctMap.put(s, count);
+//            }
+        }
         System.out.println(stringArray.length);
-        System.out.println(distinctArray);
-        System.out.println(distinctArray.size());
+        System.out.println(distinctMap);
+        System.out.println(distinctMap.size());
 
         //Task 2
         PhoneBook phoneBook = new PhoneBook();
