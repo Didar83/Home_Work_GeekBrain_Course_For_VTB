@@ -1,6 +1,7 @@
 package com.java.gb.vtb.hw5;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,9 +16,7 @@ public class PhoneBook {
         if(phoneBookExample.containsKey(name)){
             phoneBookExample.get(name).add(phoneNumber);
         } else {
-            ArrayList<String> phones = new ArrayList<>();
-            phones.add(phoneNumber);
-            phoneBookExample.put(name, phones);
+            phoneBookExample.put(name, new ArrayList<>(Arrays.asList(phoneNumber)));
         }
     }
 
@@ -26,10 +25,7 @@ public class PhoneBook {
             System.out.println("There is no records with name: " + name);
         } else {
             ArrayList<String> phones = phoneBookExample.get(name);
-            System.out.println(name + ": ");
-            for(String s : phones){
-                System.out.println(s);
-            }
+            System.out.println(name + ": " + phoneBookExample.get(name));
         }
     }
 }

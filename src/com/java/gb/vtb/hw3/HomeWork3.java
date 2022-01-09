@@ -1,10 +1,6 @@
 package com.java.gb.vtb.hw3;
 
-import com.java.gb.vtb.hw3.exception.MyArrayDataException;
 import com.java.gb.vtb.hw3.exception.MyArraySizeException;
-import org.apache.commons.lang3.RandomStringUtils;
-
-import java.util.Arrays;
 
 public class HomeWork3 {
 
